@@ -13,5 +13,40 @@ namespace LevelUp {
         public Form1() {
             InitializeComponent();
         }
+
+        private void btnLogar_Click(object sender, EventArgs e) {
+
+            if (txbEmail.Text.Length < 6) {
+                MessageBox.Show("digite um email válido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txbSenha.Text.Length < 4) {
+                MessageBox.Show("digite uma senha válida!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+                Model.CsUsuario usuario = new Model.CsUsuario();
+
+                usuario.Email = txbEmail.Text.ToLower();
+                usuario.Senha = txbSenha.Text;
+
+                DataTable result = usuario.Logar();
+
+                if (result.Rows.Count == 0) {
+                    MessageBox.Show("email ou senha inválidos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else {
+                    usuario.Id = int.Parse(result.Rows[0]["id"].ToString());
+                    usuario.Nome = result.Rows[0]["Nome"].ToString();
+
+                    Menu menuinicial = new Menu(usuario);
+                    Hide();
+                    menuinicial.ShowDialog();
+
+                    Show();
+                }
+
+            }
+
+
+        }
     }
 }
