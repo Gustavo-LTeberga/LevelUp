@@ -109,6 +109,7 @@
             // 
             // cmbEmpresaCadastrar
             // 
+            this.cmbEmpresaCadastrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmpresaCadastrar.FormattingEnabled = true;
             this.cmbEmpresaCadastrar.Location = new System.Drawing.Point(106, 132);
             this.cmbEmpresaCadastrar.Name = "cmbEmpresaCadastrar";
@@ -205,6 +206,7 @@
             // 
             // cmbEmpresaEditar
             // 
+            this.cmbEmpresaEditar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmpresaEditar.FormattingEnabled = true;
             this.cmbEmpresaEditar.Location = new System.Drawing.Point(106, 132);
             this.cmbEmpresaEditar.Name = "cmbEmpresaEditar";

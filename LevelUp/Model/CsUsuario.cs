@@ -147,6 +147,60 @@ namespace LevelUp.Model {
             }
 
         }
+        public bool Cadastrar() {
+
+            string comand = "INSERT INTO usuarios (Nome, Email, SenhaHash) VALUES " + "(@Nome, @Email, @SenhaHash)";
+            BancoDeDados conexaoBD = new BancoDeDados();
+
+            MySqlConnection con = conexaoBD.ObterConexao();
+
+            MySqlCommand cmd = new MySqlCommand(comand, con);
+
+            cmd.Parameters.AddWithValue("@Nome", Nome);
+
+            cmd.Parameters.AddWithValue("@Email", Email);
+            String senhaHash = EasyEncryption.SHA.ComputeSHA256Hash(Senha);
+            cmd.Parameters.AddWithValue("@SenhaHash", senhaHash);
+
+            // Obs.: Certifique-se de utilizar alguma método para obter o hash da senha antes de cadastrar!
+
+            cmd.Prepare();
+
+            // O trecho abaixo irá retornar true caso o cadastro dê certo:
+
+            // Em caso de erro, experimente comentar o try/catch e executar novamente o código;
+
+            // Grande parte dos problemas estão associados à um comando SQL incorreto. Verifique a string comando.
+
+            try {
+
+                if (cmd.ExecuteNonQuery() == 0) {
+
+                    conexaoBD.Desconectar(con);
+
+                    return false;
+
+                }
+
+                else {
+
+                    conexaoBD.Desconectar(con);
+
+                    return true;
+
+                }
+
+            }
+
+            catch {
+
+                conexaoBD.Desconectar(con);
+
+                return false;
+
+            }
+
+        }
 
 
 

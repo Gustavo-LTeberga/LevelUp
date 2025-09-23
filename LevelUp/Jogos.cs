@@ -67,7 +67,7 @@ namespace LevelUp {
 
         private void btnComercio_Click(object sender, EventArgs e) {
 
-            DialogResult r = MessageBox.Show($"tem certeza que Ativar Ou Desativar o comercio desse jogo ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult r = MessageBox.Show($"tem certeza que deseja Ativar Ou Desativar o comercio desse jogo ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (r == DialogResult.Yes) {
 
@@ -100,7 +100,7 @@ namespace LevelUp {
             if (txbNomeCadastrar.Text.Length < 2) {
                 MessageBox.Show("o nome deve ter no minimo 2 caracteres.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txbNomeCadastrar.Text.Length < 4) {
+            else if (txbAnoCadastrar.Text.Length < 4) {
                 MessageBox.Show("Ano deve ter no minimo 4 caracteres", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (cmbEmpresaCadastrar.Text == "") {
@@ -144,37 +144,43 @@ namespace LevelUp {
         }
 
         private void btnEditar_Click(object sender, EventArgs e) {
-            if (txbNomeEditar.Text.Length < 2) {
-                MessageBox.Show("o nome deve ter no minimo 2 caracteres.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txbNomeEditar.Text.Length < 4) {
-                MessageBox.Show("Ano deve ter no minimo 4 caracteres", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (cmbEmpresaEditar.Text == "") {
-                MessageBox.Show("selecione uma empresa", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else {
-                Model.CsJogos gameRegistrado = new Model.CsJogos();
 
-                gameRegistrado.Id = selectedID;
-                gameRegistrado.Nome = txbNomeEditar.Text;
-                gameRegistrado.Preco = double.Parse(txbPrecoEditar.Text);
-                gameRegistrado.EmpresaId = SplitarCategoria(cmbEmpresaEditar.Text);
-                gameRegistrado.Ano = int.Parse(txbAnoEditar.Text);
+            DialogResult r = MessageBox.Show($"tem certeza que deseja editar o esse jogo ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (gameRegistrado.Modificar()) {
-                    MessageBox.Show("jogo editado com sucesso! ", "Ok!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            if (r == DialogResult.Yes) {
 
-                    ResetarCampos();
-                    UpdateDgv();
-                    txbNomeEditar.Clear();
-                    txbPrecoEditar.Clear();
-                    txbAnoEditar.Clear();
+                if (txbNomeEditar.Text.Length < 2) {
+                    MessageBox.Show("o nome deve ter no minimo 2 caracteres.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (txbAnoEditar.Text.Length < 4) {
+                    MessageBox.Show("Ano deve ter no minimo 4 caracteres", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (cmbEmpresaEditar.Text == "") {
+                    MessageBox.Show("selecione uma empresa", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else {
-                    MessageBox.Show("erro ao editar!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    Model.CsJogos gameRegistrado = new Model.CsJogos();
 
+                    gameRegistrado.Id = selectedID;
+                    gameRegistrado.Nome = txbNomeEditar.Text;
+                    gameRegistrado.Preco = double.Parse(txbPrecoEditar.Text);
+                    gameRegistrado.EmpresaId = SplitarCategoria(cmbEmpresaEditar.Text);
+                    gameRegistrado.Ano = int.Parse(txbAnoEditar.Text);
+
+                    if (gameRegistrado.Modificar()) {
+                        MessageBox.Show("jogo editado com sucesso! ", "Ok!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        ResetarCampos();
+                        UpdateDgv();
+                        txbNomeEditar.Clear();
+                        txbPrecoEditar.Clear();
+                        txbAnoEditar.Clear();
+                    }
+                    else {
+                        MessageBox.Show("erro ao editar!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
             }
         }
     }

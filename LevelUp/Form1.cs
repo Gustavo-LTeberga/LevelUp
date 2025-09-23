@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LevelUp.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,5 +49,16 @@ namespace LevelUp {
 
 
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e) {
+
+            Model.CsUsuario usuario = new Model.CsUsuario();
+
+                Cadastrar formcadastrar = new Cadastrar(usuario);
+                formcadastrar.ShowDialog();
+                Show();
+            }
+
+
+        }
     }
-}

@@ -20,6 +20,13 @@ namespace LevelUp {
 
             lblOi.Text = $"Ola {usuario.Nome}!";
 
+            if (usuario.Id != 1) {
+                btnEmpresa.Visible = false;
+                btnJogos.Visible = false;
+                btnTransacoes.Visible = false;
+                btnUsuario.Visible = false;
+            }
+
         }
 
         private void btnUsuario_Click(object sender, EventArgs e) {

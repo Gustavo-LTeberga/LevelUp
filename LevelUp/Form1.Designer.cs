@@ -29,6 +29,7 @@
             this.txbSenha = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.btnLogar = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblBemVindo
@@ -87,11 +88,22 @@
             this.btnLogar.UseVisualStyleBackColor = true;
             this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
             // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Location = new System.Drawing.Point(12, 318);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(660, 32);
+            this.btnCadastrar.TabIndex = 6;
+            this.btnCadastrar.Text = "Não tem uma conta? Toque Aqui Para Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 362);
+            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnLogar);
             this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.lblSenha);
@@ -115,6 +127,7 @@
         private System.Windows.Forms.TextBox txbSenha;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Button btnLogar;
+        private System.Windows.Forms.Button btnCadastrar;
     }
 }
 

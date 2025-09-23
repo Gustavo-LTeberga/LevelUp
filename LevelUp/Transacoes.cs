@@ -14,6 +14,14 @@ namespace LevelUp {
         public Transacoes(Model.CsUsuario usuario) {
             InitializeComponent();
             this.usuario = usuario;
+            UpdateDgv();
+        }
+
+        public void UpdateDgv() {
+            Model.CsTransacoes transacoes = new Model.CsTransacoes();
+
+            dgvEmpresas.DataSource = transacoes.Listar();
+
         }
     }
 }

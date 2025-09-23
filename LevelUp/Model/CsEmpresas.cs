@@ -7,17 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LevelUp.Model {
-    public class CsJogos {
+    public class CsEmpresas {
+
         public int Id { get; set; }
+
         public string Nome { get; set; }
-        public int Ano { get; set; }
-        public double Preco { get; set; }
-        public int EmpresaId { get; set; }
-        public bool Comercio { get; set; }
 
         public DataTable Listar() {
 
-            string comando = "SELECT id, Nome, Ano, Preco, EmpresaId, Comercio FROM games";
+            string comando = "SELECT id, Nome FROM empresas";
 
             BancoDeDados conexaoBD = new BancoDeDados();
             MySqlConnection con = conexaoBD.ObterConexao();
@@ -30,102 +28,10 @@ namespace LevelUp.Model {
 
         }
 
-        public bool Ativar() {
-
-            string comand = "UPDATE games SET Comercio = true WHERE id = @id";
-            BancoDeDados conexaoBD = new BancoDeDados();
-
-            MySqlConnection con = conexaoBD.ObterConexao();
-
-            MySqlCommand cmd = new MySqlCommand(comand, con);
-
-            cmd.Parameters.AddWithValue("@id", Id);
-
-
-
-
-            cmd.Prepare();
-
-            try {
-
-                if (cmd.ExecuteNonQuery() == 0) {
-
-                    conexaoBD.Desconectar(con);
-
-                    return false;
-
-                }
-
-                else {
-
-                    conexaoBD.Desconectar(con);
-
-                    return true;
-
-                }
-
-            }
-
-            catch {
-
-                conexaoBD.Desconectar(con);
-
-                return false;
-
-            }
-
-        }
-
-        public bool Desativar() {
-
-            string comand = "UPDATE games SET Comercio = false WHERE id = @id";
-            BancoDeDados conexaoBD = new BancoDeDados();
-
-            MySqlConnection con = conexaoBD.ObterConexao();
-
-            MySqlCommand cmd = new MySqlCommand(comand, con);
-
-            cmd.Parameters.AddWithValue("@id", Id);
-
-
-
-
-            cmd.Prepare();
-
-            try {
-
-                if (cmd.ExecuteNonQuery() == 0) {
-
-                    conexaoBD.Desconectar(con);
-
-                    return false;
-
-                }
-
-                else {
-
-                    conexaoBD.Desconectar(con);
-
-                    return true;
-
-                }
-
-            }
-
-            catch {
-
-                conexaoBD.Desconectar(con);
-
-                return false;
-
-            }
-
-        }
-
         public bool Cadastrar() {
 
 
-            string comand = "INSERT INTO games (Nome, Preco, Ano, EmpresaId) VALUES " + "(@Nome, @Preco, @Ano, @EmpresaId)";
+            string comand = "INSERT INTO empresas (Nome) VALUES " + "(@Nome)";
             BancoDeDados conexaoBD = new BancoDeDados();
 
             MySqlConnection con = conexaoBD.ObterConexao();
@@ -133,14 +39,6 @@ namespace LevelUp.Model {
             MySqlCommand cmd = new MySqlCommand(comand, con);
 
             cmd.Parameters.AddWithValue("@Nome", Nome);
-            cmd.Parameters.AddWithValue("@Preco", Preco);
-            cmd.Parameters.AddWithValue("@Ano", Ano);
-            cmd.Parameters.AddWithValue("@EmpresaId", EmpresaId);
-
-
-
-
-
 
 
             // Obs.: Certifique-se de utilizar alguma método para obter o hash da senha antes de cadastrar!
@@ -185,7 +83,7 @@ namespace LevelUp.Model {
 
         public bool Modificar() {
 
-            string comand = "UPDATE games SET Nome = @Nome, " + "Preco = @Preco, Ano = @Ano, EmpresaId = @EmpresaId  WHERE Id = @Id";
+            string comand = "UPDATE empresas SET Nome = @Nome WHERE Id = @Id";
             BancoDeDados conexaoBD = new BancoDeDados();
 
             MySqlConnection con = conexaoBD.ObterConexao();
@@ -194,9 +92,6 @@ namespace LevelUp.Model {
 
             cmd.Parameters.AddWithValue("@Id", Id);
             cmd.Parameters.AddWithValue("@Nome", Nome);
-            cmd.Parameters.AddWithValue("@Preco", Preco);
-            cmd.Parameters.AddWithValue("@Ano", Ano);
-            cmd.Parameters.AddWithValue("@EmpresaId", EmpresaId);
 
 
             cmd.Prepare();
@@ -230,6 +125,8 @@ namespace LevelUp.Model {
             }
 
         }
+
+
 
 
     }
