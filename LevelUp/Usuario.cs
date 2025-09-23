@@ -43,22 +43,22 @@ namespace LevelUp {
 
             if (r == DialogResult.Yes) {
 
-                Model.CsUsuario UsuarioRegistrado = new Model.CsUsuario();
+                Model.CsUsuario usuarioRegistrado = new Model.CsUsuario();
 
                 int ls = dgvUsuario.SelectedCells[0].RowIndex;
 
-                UsuarioRegistrado.Ativo = (bool)dgvUsuario.Rows[ls].Cells[3].Value;
+                usuarioRegistrado.Ativo = (bool)dgvUsuario.Rows[ls].Cells[3].Value;
 
-                UsuarioRegistrado.Id = selectedID;
+                usuarioRegistrado.Id = selectedID;
 
-                if (!UsuarioRegistrado.Ativo) {
+                if (!usuarioRegistrado.Ativo) {
 
-                    UsuarioRegistrado.Ativar();
+                    usuarioRegistrado.Ativar();
 
                 }
                 else {
                 
-                    UsuarioRegistrado.Desativar();
+                    usuarioRegistrado.Desativar();
                 }
 
             }

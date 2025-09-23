@@ -106,6 +106,8 @@
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\BancoDeDados.cs" />
+    <Compile Include="Model\CsEmpresa.cs" />
+    <Compile Include="Model\CsJogos.cs" />
     <Compile Include="Model\CsUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jogos.resx">
+      <DependentUpon>Jogos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
