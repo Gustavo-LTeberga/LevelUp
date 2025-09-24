@@ -65,12 +65,19 @@ Arquivos de interesse (exemplos):
 
 Vou incluir quatro imagens para ilustrar telas do aplicativo. Use estes nomes de arquivo ao adicionar as imagens ao repositório:
 
-1. `login_screen.png` — imagem da tela de login.
-2. `admin_dashboard.png` — imagem mostrando a interface quando logado como administrador.
-3. `compra_usuario.png` — imagem mostrando o processo de compra como usuário comum.
-4. `jogos_crud.png` — imagem mostrando a parte de **adicionar e editar jogos**.
+## Telas do aplicativo
 
-Coloque essas imagens na mesma pasta do README ou em uma pasta `assets/` e referencie-as no README se quiser que apareçam inline.
+### Tela de Login
+![Tela de Login](login_screen.png)
+
+### Dashboard do Administrador
+![Dashboard Administrador](admin_dashboard.png)
+
+### Compra como Usuário Comum
+![Compra Usuário](compra_usuario.png)
+
+### Adicionar/Editar Jogos
+![Adicionar e Editar Jogos](jogos_crud.png)
 
 ---
 
