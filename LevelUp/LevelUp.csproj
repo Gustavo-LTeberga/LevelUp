@@ -87,6 +87,12 @@
     <Compile Include="Cadastrar.Designer.cs">
       <DependentUpon>Cadastrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComprarGames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComprarGames.Designer.cs">
+      <DependentUpon>ComprarGames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Empresas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,7 @@
     <Compile Include="Model\BancoDeDados.cs" />
     <Compile Include="Model\CsEmpresa.cs" />
     <Compile Include="Model\CsEmpresas.cs" />
+    <Compile Include="Model\CsFormasDePagamento.cs" />
     <Compile Include="Model\CsJogos.cs" />
     <Compile Include="Model\CsTransacoes.cs" />
     <Compile Include="Model\CsUsuario.cs" />
@@ -133,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="Cadastrar.resx">
       <DependentUpon>Cadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComprarGames.resx">
+      <DependentUpon>ComprarGames.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empresas.resx">
       <DependentUpon>Empresas.cs</DependentUpon>
@@ -154,6 +164,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Transacoes.resx">
       <DependentUpon>Transacoes.cs</DependentUpon>
@@ -175,6 +186,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\BackGroundLvlUp01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackGroundLvlUp02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackGroundLvlUp03.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

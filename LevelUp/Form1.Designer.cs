@@ -23,6 +23,7 @@
         /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txbEmail = new System.Windows.Forms.TextBox();
@@ -35,18 +36,22 @@
             // lblBemVindo
             // 
             this.lblBemVindo.AutoSize = true;
-            this.lblBemVindo.Font = new System.Drawing.Font("Modern No. 20", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBemVindo.Location = new System.Drawing.Point(136, 45);
+            this.lblBemVindo.BackColor = System.Drawing.Color.Transparent;
+            this.lblBemVindo.Font = new System.Drawing.Font("Modern No. 20", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBemVindo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblBemVindo.Location = new System.Drawing.Point(89, 34);
             this.lblBemVindo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblBemVindo.Name = "lblBemVindo";
-            this.lblBemVindo.Size = new System.Drawing.Size(384, 36);
+            this.lblBemVindo.Size = new System.Drawing.Size(682, 65);
             this.lblBemVindo.TabIndex = 0;
             this.lblBemVindo.Text = "Bem Vindo Ao LevelUp!";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(159, 135);
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblEmail.Location = new System.Drawing.Point(255, 159);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(76, 24);
@@ -55,14 +60,14 @@
             // 
             // txbEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(244, 132);
+            this.txbEmail.Location = new System.Drawing.Point(340, 156);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(264, 30);
             this.txbEmail.TabIndex = 2;
             // 
             // txbSenha
             // 
-            this.txbSenha.Location = new System.Drawing.Point(244, 183);
+            this.txbSenha.Location = new System.Drawing.Point(340, 207);
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(264, 30);
@@ -71,7 +76,9 @@
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(159, 186);
+            this.lblSenha.BackColor = System.Drawing.Color.Transparent;
+            this.lblSenha.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblSenha.Location = new System.Drawing.Point(255, 210);
             this.lblSenha.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(73, 24);
@@ -80,29 +87,32 @@
             // 
             // btnLogar
             // 
-            this.btnLogar.Location = new System.Drawing.Point(163, 239);
+            this.btnLogar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnLogar.Location = new System.Drawing.Point(259, 263);
             this.btnLogar.Name = "btnLogar";
             this.btnLogar.Size = new System.Drawing.Size(345, 48);
             this.btnLogar.TabIndex = 5;
             this.btnLogar.Text = "Logar";
-            this.btnLogar.UseVisualStyleBackColor = true;
+            this.btnLogar.UseVisualStyleBackColor = false;
             this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(12, 318);
+            this.btnCadastrar.BackColor = System.Drawing.Color.Cyan;
+            this.btnCadastrar.Location = new System.Drawing.Point(100, 374);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(660, 32);
             this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "Não tem uma conta? Toque Aqui Para Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 362);
+            this.BackgroundImage = global::LevelUp.Properties.Resources.BackGroundLvlUp03;
+            this.ClientSize = new System.Drawing.Size(868, 436);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnLogar);
             this.Controls.Add(this.txbSenha);
@@ -111,8 +121,12 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblBemVindo);
             this.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

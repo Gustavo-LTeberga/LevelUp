@@ -23,11 +23,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empresas));
             this.dgvEmpresas = new System.Windows.Forms.DataGridView();
             this.grbCadastrar = new System.Windows.Forms.GroupBox();
-            this.lblNomeCadastrar = new System.Windows.Forms.Label();
-            this.txbNomeCadastrar = new System.Windows.Forms.TextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.txbNomeCadastrar = new System.Windows.Forms.TextBox();
+            this.lblNomeCadastrar = new System.Windows.Forms.Label();
             this.grbEditar = new System.Windows.Forms.GroupBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.txbNomeEditar = new System.Windows.Forms.TextBox();
@@ -46,7 +47,7 @@
             this.dgvEmpresas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmpresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpresas.Location = new System.Drawing.Point(26, 22);
-            this.dgvEmpresas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvEmpresas.Margin = new System.Windows.Forms.Padding(6);
             this.dgvEmpresas.Name = "dgvEmpresas";
             this.dgvEmpresas.ReadOnly = true;
             this.dgvEmpresas.Size = new System.Drawing.Size(838, 251);
@@ -55,17 +56,36 @@
             // 
             // grbCadastrar
             // 
+            this.grbCadastrar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.grbCadastrar.Controls.Add(this.btnCadastrar);
             this.grbCadastrar.Controls.Add(this.txbNomeCadastrar);
             this.grbCadastrar.Controls.Add(this.lblNomeCadastrar);
             this.grbCadastrar.Location = new System.Drawing.Point(36, 285);
-            this.grbCadastrar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grbCadastrar.Margin = new System.Windows.Forms.Padding(6);
             this.grbCadastrar.Name = "grbCadastrar";
-            this.grbCadastrar.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grbCadastrar.Padding = new System.Windows.Forms.Padding(6);
             this.grbCadastrar.Size = new System.Drawing.Size(398, 154);
             this.grbCadastrar.TabIndex = 1;
             this.grbCadastrar.TabStop = false;
             this.grbCadastrar.Text = "Cadastrar";
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btnCadastrar.Location = new System.Drawing.Point(9, 86);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(377, 47);
+            this.btnCadastrar.TabIndex = 2;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // txbNomeCadastrar
+            // 
+            this.txbNomeCadastrar.Location = new System.Drawing.Point(95, 30);
+            this.txbNomeCadastrar.Name = "txbNomeCadastrar";
+            this.txbNomeCadastrar.Size = new System.Drawing.Size(291, 30);
+            this.txbNomeCadastrar.TabIndex = 1;
             // 
             // lblNomeCadastrar
             // 
@@ -76,25 +96,9 @@
             this.lblNomeCadastrar.TabIndex = 0;
             this.lblNomeCadastrar.Text = "Nome";
             // 
-            // txbNomeCadastrar
-            // 
-            this.txbNomeCadastrar.Location = new System.Drawing.Point(95, 30);
-            this.txbNomeCadastrar.Name = "txbNomeCadastrar";
-            this.txbNomeCadastrar.Size = new System.Drawing.Size(291, 30);
-            this.txbNomeCadastrar.TabIndex = 1;
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.Location = new System.Drawing.Point(9, 86);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(377, 47);
-            this.btnCadastrar.TabIndex = 2;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
             // grbEditar
             // 
+            this.grbEditar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.grbEditar.Controls.Add(this.btnEditar);
             this.grbEditar.Controls.Add(this.txbNomeEditar);
             this.grbEditar.Controls.Add(this.lblNomeEditar);
@@ -110,12 +114,13 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.Color.DarkOrchid;
             this.btnEditar.Location = new System.Drawing.Point(9, 86);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(377, 47);
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // txbNomeEditar
@@ -138,13 +143,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::LevelUp.Properties.Resources.BackGroundLvlUp02;
             this.ClientSize = new System.Drawing.Size(886, 454);
             this.Controls.Add(this.grbEditar);
             this.Controls.Add(this.grbCadastrar);
             this.Controls.Add(this.dgvEmpresas);
             this.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
             this.Name = "Empresas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empresas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).EndInit();
             this.grbCadastrar.ResumeLayout(false);

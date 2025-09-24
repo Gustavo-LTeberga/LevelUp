@@ -17,7 +17,7 @@ namespace LevelUp.Model {
 
         public DataTable Listar() {
 
-            string comando = "SELECT id, Nome, Ano, Preco, EmpresaId, Comercio FROM games";
+            string comando = "SELECT games.id, games.Nome, games.Ano, games.Preco, empresas.Nome AS NomeEmpresa, games.Comercio FROM games INNER JOIN empresas ON games.EmpresaId = empresas.id;";
 
             BancoDeDados conexaoBD = new BancoDeDados();
             MySqlConnection con = conexaoBD.ObterConexao();
@@ -231,6 +231,25 @@ namespace LevelUp.Model {
 
         }
 
+        public DataTable ListarCompra() {
+
+            string comand = "SELECT Preco FROM games WHERE Id = @Id";
+            BancoDeDados conexaoBD = new BancoDeDados();
+
+            MySqlConnection con = conexaoBD.ObterConexao();
+
+            MySqlCommand cmd = new MySqlCommand(comand, con);
+
+            cmd.Parameters.AddWithValue("@Id", Id);
+
+
+            cmd.Prepare();
+
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
+        }
 
     }
 }

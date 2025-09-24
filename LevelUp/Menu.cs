@@ -21,10 +21,20 @@ namespace LevelUp {
             lblOi.Text = $"Ola {usuario.Nome}!";
 
             if (usuario.Id != 1) {
+
                 btnEmpresa.Visible = false;
                 btnJogos.Visible = false;
                 btnTransacoes.Visible = false;
                 btnUsuario.Visible = false;
+                btnComprar.Visible = true;
+            }
+            else {
+
+                btnEmpresa.Visible = true;
+                btnJogos.Visible = true;
+                btnTransacoes.Visible = true;
+                btnUsuario.Visible = true;
+                btnComprar.Visible = false;
             }
 
         }
@@ -47,6 +57,11 @@ namespace LevelUp {
         private void btnTransacoes_Click(object sender, EventArgs e) {
             Transacoes formusuario = new Transacoes(usuario);
             formusuario.ShowDialog();
+        }
+
+        private void btnComprar_Click(object sender, EventArgs e) {
+            ComprarGames formComprar = new ComprarGames(usuario);
+            formComprar.ShowDialog();
         }
     }
 }

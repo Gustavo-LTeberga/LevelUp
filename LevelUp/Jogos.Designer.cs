@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Jogos));
             this.dgvGames = new System.Windows.Forms.DataGridView();
             this.grbGamesCadastrar = new System.Windows.Forms.GroupBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
@@ -70,6 +71,7 @@
             // 
             // grbGamesCadastrar
             // 
+            this.grbGamesCadastrar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.grbGamesCadastrar.Controls.Add(this.btnCadastrar);
             this.grbGamesCadastrar.Controls.Add(this.lblEmpresaCadastrar);
             this.grbGamesCadastrar.Controls.Add(this.cmbEmpresaCadastrar);
@@ -90,12 +92,13 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.DarkOrchid;
             this.btnCadastrar.Location = new System.Drawing.Point(13, 170);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(351, 36);
             this.btnCadastrar.TabIndex = 9;
             this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // lblEmpresaCadastrar
@@ -166,6 +169,7 @@
             // 
             // grbGamesEditar
             // 
+            this.grbGamesEditar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.grbGamesEditar.Controls.Add(this.btnEditar);
             this.grbGamesEditar.Controls.Add(this.lblEmpresaEditar);
             this.grbGamesEditar.Controls.Add(this.cmbEmpresaEditar);
@@ -187,12 +191,13 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.Color.DarkOrchid;
             this.btnEditar.Location = new System.Drawing.Point(13, 170);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(351, 36);
             this.btnEditar.TabIndex = 10;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // lblEmpresaEditar
@@ -263,6 +268,7 @@
             // 
             // grbComercio
             // 
+            this.grbComercio.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.grbComercio.Controls.Add(this.btnComercio);
             this.grbComercio.Enabled = false;
             this.grbComercio.Location = new System.Drawing.Point(799, 332);
@@ -274,26 +280,32 @@
             // 
             // btnComercio
             // 
+            this.btnComercio.BackColor = System.Drawing.Color.DarkOrchid;
             this.btnComercio.Location = new System.Drawing.Point(6, 29);
             this.btnComercio.Name = "btnComercio";
             this.btnComercio.Size = new System.Drawing.Size(179, 146);
             this.btnComercio.TabIndex = 0;
             this.btnComercio.Text = "Ativar/Desativar";
-            this.btnComercio.UseVisualStyleBackColor = true;
+            this.btnComercio.UseVisualStyleBackColor = false;
             this.btnComercio.Click += new System.EventHandler(this.btnComercio_Click);
             // 
             // Jogos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::LevelUp.Properties.Resources.BackGroundLvlUp02;
             this.ClientSize = new System.Drawing.Size(1020, 557);
             this.Controls.Add(this.grbComercio);
             this.Controls.Add(this.grbGamesEditar);
             this.Controls.Add(this.grbGamesCadastrar);
             this.Controls.Add(this.dgvGames);
             this.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
             this.Name = "Jogos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jogos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGames)).EndInit();
             this.grbGamesCadastrar.ResumeLayout(false);
