@@ -10,17 +10,15 @@ LevelUp é um **aplicativo desktop de simulação** para compra de jogos. O obje
 
 ### Para usuários comuns
 
-* Visualizar catálogo de jogos com nome, ano e preço.
 * Realizar a simulação de compra de um jogo.
-* Histórico simples de transações (apenas para visualização dentro da simulação).
 
 ### Para administrador (login com conta administrativa)
 
 Ao logar com a conta de administrador, o usuário terá acesso às seguintes funcionalidades administrativas:
 
 * Visualizar todas as transações registradas (modo de simulação).
-* Ativar / desativar empresas (fornecedores) — altera se os jogos daquela empresa aparecem no catálogo.
-* Adicionar novas empresas e editar empresas existentes.
+* Ativar / desativar empresas (fornecedores), Adicionar novas empresas e editar empresas existentes.
+* Visualizar Usuarios e Ativar/Desativar
 * Adicionar novos jogos e editar jogos existentes.
 
 > Observação: todas as ações simulam comportamento de um sistema real, mas não fazem chamadas externas nem processam pagamentos.
